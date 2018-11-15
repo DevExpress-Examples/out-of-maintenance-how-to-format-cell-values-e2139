@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/HowToCellFormat/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/HowToCellFormat/MainWindow.xaml))
+<!-- default file list end -->
 # How to: Format Cell Values
 
 
