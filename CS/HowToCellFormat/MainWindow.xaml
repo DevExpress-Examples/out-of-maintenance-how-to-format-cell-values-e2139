@@ -4,17 +4,29 @@
         xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid"
         Title="MainWindow" Height="350" Width="525"  Loaded="Window_Loaded">
     <Grid>
-        <dxpg:PivotGridControl HorizontalAlignment="Left" Name="pivotGridControl1" 
-							   VerticalAlignment="Top">
+        <dxpg:PivotGridControl Name="pivotGridControl1" DataProcessingEngine="Optimized">
             <dxpg:PivotGridControl.Fields>
-                <dxpg:PivotGridField Name="fieldYear" FieldName="OrderDate" Area="ColumnArea"
-									 Caption="Year" GroupInterval="DateYear" />
-                <dxpg:PivotGridField Name="fieldProductName" FieldName="ProductName" 
-									 Area="RowArea" Caption="Product Name" />
-                <dxpg:PivotGridField Name="fieldExtendedPrice" FieldName="Extended Price" 
-									 Area="DataArea" GrandTotalCellFormat="c0" />
-                <dxpg:PivotGridField Name="fieldQuantity" FieldName="Quantity" Area="DataArea" 
-									 CellFormat="({0})" />
+                <dxpg:PivotGridField Name="fieldYear" Area="ColumnArea"
+									 Caption="Year" >
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateYear"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldProductName" Area="RowArea" Caption="Product Name" >
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="ProductName"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldExtendedPrice" Area="DataArea" GrandTotalCellFormat="c0" >
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Extended Price"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField Name="fieldQuantity" Area="DataArea" CellFormat="({0})" >
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Quantity"/>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
             </dxpg:PivotGridControl.Fields>
         </dxpg:PivotGridControl>
     </Grid>
